@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  db:
+    build:
+      context: ./mysql
+    container_name: sample-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: csci459
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: csci459
+      MYSQL_PASSWORD: csci459
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/docker-entrypoint-initdb.d/
+      - mysql:/var/lib/mysql/
+  web:
+    build:
+      context: ./webserver
+    container_name: sample-webserver
+    links:
+      - db:db
+    volumes:
+      - ./webserver/:/var/www/html/
+    ports:
+      - "8080:80"
+volumes:
+ mysql:

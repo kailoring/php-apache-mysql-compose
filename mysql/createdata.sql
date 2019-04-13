@@ -1,3 +1,5 @@
+DROP DATABASE testdb;
+
 # Create the sample database
 create database testdb;
 

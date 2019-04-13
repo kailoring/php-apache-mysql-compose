@@ -1,9 +1,8 @@
 <?php
-$servername = "sample-database";
+$servername = "db";
 $username = "csci459";
 $password = "csci459";
 $dbname = "testdb";
-define('ROOT_URL', 'http://localhost:8080/');
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

@@ -4,9 +4,9 @@ Create containers for a database and a simple web application
 
 ## Files
 
-- `run_container.sh`
+- `docker-compose.yml`
 
-  This shell script:
+  Docker-compose file used to do the following:
 
     1. Builds the mysql container
     2. Runs the container
@@ -16,6 +16,7 @@ Create containers for a database and a simple web application
     6. Runs a command to print the database contents
     7. Builds the webserver container
     8. Runs the webserver container
+    9. Persists data
 
 ## Directories
 
@@ -40,3 +41,23 @@ This directory contains the files necessary to build the Docker container for th
 - `index.php`
 
   A simple application to print the contents of the database.
+
+- `adduser.php`
+
+  Web page used to add a user to the database
+
+- `edituser.php`
+
+  Web page used to modify a user's information
+
+- `db.php`
+
+  Used to establish and check connection to the database
+
+- `Dockerfile`
+
+  Installs the mysql interface and copies the web application into a root directory
+
+### adr
+
+This directory contains adr files used to document decisions regarding the application.
